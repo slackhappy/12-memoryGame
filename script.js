@@ -4,7 +4,7 @@ var assignments = 1;
 var divIds = [];
 var matches = 0;
 
-function shufflePositions() {
+function fillBoard() {
   //TODO: randomly assign positions to the tiles on the screen call
   // addTileToBoard here
   // Hint: You can use a forEach or a for loop
@@ -61,7 +61,7 @@ $(document).ready(function() {
       $(elm).fadeOut('fast').delay(1).fadeIn('fast');
   };
 
-  shufflePositions();
+  fillBoard();
 
   $('.token').click( function(e) {
       var element = e.toElement.classList[0]
