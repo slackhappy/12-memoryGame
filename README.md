@@ -1,5 +1,5 @@
 #Project 2 - The Memory Game
-![Imgur](http://i.imgur.com/Gpy0Lkw.jpg)
+![Imgur](http://proofthatblog.com/wp-content/uploads/2013/06/question-mark.jpg)
 ##Do Now
 Begin this session by completing the [Do Now](doNow.md) activity.
 ##Scope
