@@ -1,6 +1,8 @@
 // This function returns the selection of the computer
             var userPoint = 0;
             var faceUp = []
+            var assignments = 1;
+            var divIds = []
             var matches = 0
 
             function shufflePositions() {
@@ -16,20 +18,22 @@
               var newArray = []
               var length = array.length
 
-              for(i = 0; i < 6; i++) {
-                var randomPick = Math.floor(Math.random() * length);
+              for(i = 0; i < length; i++) {
+                var arrLen = array.length
+                var randomPick = Math.floor(Math.random() * arrLen);
                 var element = array[randomPick]
                 newArray.push(element)
                 array.splice(array.indexOf(element), 1)
-                length = array.length
+                arrLen --
               }
 
               return newArray
             }
 
             function addClassesToDivs(element) {
-              //TODO: randomly assign classes to the divs
-              var div =  "<div id=\"" + element +"\" class=\"token\">Worked</div>"
+              //TODO: randomly assign ids to the divs
+              var div =  "<div id=\"" + assignments +"\" class=\""+ element + " token\">Worked</div>"
+              assignments ++
               $(".game").append(div)
             }
 
@@ -40,24 +44,31 @@
             function checkCardMatch(array) {
               //TODO: check to see if the value of the 2 face up cards match
               if (array[0] === array[1]) {
+                window.x = array[0]
                 matches ++
+                $("#" + divIds[0]).addClass("matched")
+                $("#" + divIds[1]).addClass("matched")
+                divIds = []
                 console.log("Found match!")
               } else {
+                divIds = []
                 console.log("No match")
               }
+            }
 
+            function assignImages() {
+             //TODO: once the html tiles are shuffled dynamically add images to them
             }
 
             function setPoint() {
                 $('#userPoint').text(userPoint);
-                $('#aiPoint').text(aiPoint);
             }
 
-            function evaluate( evt ){
-                var userValue = evt.target.getAttribute('id');
+            function evaluate( evt ) {
+                var userValue = evt.target.getAttribute('class');
+                var divID = evt.target.getAttribute("id");
                 faceUp.push(userValue)
-
-                $('#userChoice').text('Your choice: ' + userValue);
+                divIds.push(divID)
 
                 if (faceUp.length == 2) {
                   checkCardMatch(faceUp)
@@ -77,7 +88,6 @@
               $("#card").flip({
                 trigger: 'click'
               })
-                setPoint();
                 function bop(elm){
                     $(elm).fadeOut('fast').delay(1).fadeIn('fast');
                 }

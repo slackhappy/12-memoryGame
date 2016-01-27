@@ -8,6 +8,7 @@
 }
 .token {
     width: 32%;
+    height: 50%;
     border: 1px solid blue;
     margin-left: 1px;
     float:left;
