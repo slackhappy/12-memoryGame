@@ -32,6 +32,11 @@
 .tile {
     width: 190px;
     height: 160px;
+    float: left;
+}
+
+.game {
+    width: 800;
 }
 
 .lays {

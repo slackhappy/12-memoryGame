@@ -24,7 +24,9 @@ function fillBoard() {
     doubleTiles.push(tiles[i]);
   }
   var shuffled = shuffle(doubleTiles);
-  console.log(shuffled);
+  for (var i = 0; i < shuffled.length; i++) {
+    addTileToBoard(shuffled[i]);
+  }
 };
 
 function shuffle(array) {
@@ -46,9 +48,8 @@ function shuffle(array) {
 
 function addTileToBoard(element) {
   //TODO: randomly assign ids to the divs
-  var div =  "<div id=\"" + assignments +"\" class=\""+ element + " token\"></div>";
+  var div = '<div class="tile ' + element + '"></div>';
   $(".game").append(div);
-  assignments ++
 };
 
 function clearBoard() {
