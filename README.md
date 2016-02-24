@@ -1,8 +1,8 @@
 #The Memory Game
-![Imgur](http://proofthatblog.com/wp-content/uploads/2013/06/question-mark.jpg)
+![Screenshot](https://s3.amazonaws.com/f.cl.ly/items/0k263D3i310c361n1z2t/Screen%20Shot%202016-02-23%20at%2011.42.22%20PM.png?v=8e96c7a3)
 
-## Example
-[http://www.web-games-online.com/memory/](http://www.web-games-online.com/memory/)
+## Demo
+[http://slackhappy.github.io/scripted_memoryGame/](http://slackhappy.github.io/scripted_memoryGame/)
 
 ##Scope
 The success of your Rock Paper Scissors game has prompted your old employer, Old Games, New Programs LLC, to ask you to create
