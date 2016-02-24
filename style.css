@@ -26,18 +26,20 @@
 }
 
 .hidden {
-  display: none;
+  background-image: none !important;
 }
 
 .tile {
     width: 190px;
     height: 160px;
     float: left;
+    border: 1px solid;
 }
 
 .game {
     width: 800;
 }
+
 
 .lays {
     background-image: url('http://www.fritolay.com/images/default-source/Logos/lays-logo.png');

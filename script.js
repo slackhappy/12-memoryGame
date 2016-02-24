@@ -48,7 +48,7 @@ function shuffle(array) {
 
 function addTileToBoard(element) {
   //TODO: randomly assign ids to the divs
-  var div = '<div class="tile ' + element + '"></div>';
+  var div = '<div class="tile ' + element + ' hidden"></div>';
   $(".game").append(div);
 };
 
@@ -74,18 +74,13 @@ function evaluate( evt ) {
 
 
 $(document).ready(function() {
-  function bop(elm) {
-      $(elm).fadeOut('fast').delay(1).fadeIn('fast');
-  };
-
   fillBoard();
 
-  $('.token').click( function(e) {
-      var element = e.toElement.classList[0]
-      var id = e.toElement.getAttribute("id")
-      assignText(id, element)
-      bop(this);
-      evaluate(e);
+  $('.tile').click( function(e) {
+      var target = $(e.target);
+      if (target.hasClass("hidden")) {
+        target.toggleClass("hidden");
+      }
   });
 
 
