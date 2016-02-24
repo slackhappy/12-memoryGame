@@ -1,7 +1,5 @@
-var userPoint = 0;
-var faceUp = [];
-var assignments = 1;
-var divIds = [];
+
+var faceUp = null;
 var matches = 0;
 
 function fillBoard() {
@@ -48,40 +46,36 @@ function shuffle(array) {
 
 function addTileToBoard(element) {
   //TODO: randomly assign ids to the divs
-  var div = '<div class="tile ' + element + ' hidden"></div>';
+  var div = '<div class="tile ' + element + ' hidden" data-type="' + element +'"></div>';
   $(".game").append(div);
 };
 
-function clearBoard() {
-  $(".game").empty();
-};
 
-function checkTilesMatch(array) {
-  //TODO: check to see if the value of the 2 face up tile match
-
-};
-
-function setPoint() {
-    $('#userPoint').text(userPoint);
-};
-
-function evaluate( evt ) {
-    var tileType = evt.target.getAttribute('class');
-    var divID = evt.target.getAttribute("id");
-    //TODO: If this is first tile clicked store the card if it is the second tile
-    // clicked check to see if it is the same as the first.
+function evaluate( target ) {
+  if (faceUp) {
+    if ($(faceUp).data('type') == $(target).data('type')) {
+      matches++;
+      faceUp = null;
+    } else {
+      window.setTimeout(function () {
+        $(target).toggleClass("hidden");
+        $(faceUp).toggleClass("hidden");
+        faceUp = null;
+      }, 500);
+    }
+  } else {
+    faceUp = target;
+  }
 };
 
 
 $(document).ready(function() {
   fillBoard();
-
   $('.tile').click( function(e) {
-      var target = $(e.target);
-      if (target.hasClass("hidden")) {
-        target.toggleClass("hidden");
+      var target = e.target;
+      if ($(target).hasClass("hidden")) {
+        $(target).toggleClass("hidden");
+        evaluate(target);
       }
   });
-
-
 });
