@@ -28,3 +28,45 @@
 .hidden {
   display: none;
 }
+
+.tile {
+    width: 190px;
+    height: 160px;
+}
+
+.lays {
+    background-image: url('http://www.fritolay.com/images/default-source/Logos/lays-logo.png');
+}
+
+.doritos {
+    background-image: url('http://www.fritolay.com/images/default-source/Logos/doritos-logo.png');
+}
+
+.cheetos {
+    background-image: url('http://www.fritolay.com/images/default-source/Logos/cheetos-logo.png');
+}
+
+.fritos {
+    background-image: url('http://www.fritolay.com/images/default-source/Logos/fritos-logo.png');
+}
+
+.tostitos {
+    background-image: url('http://www.fritolay.com/images/default-source/Logos/tostitos-logoff0a37e0cc54631c95cbff00000d71c6.png');
+}
+
+.ruffles {
+    background-image: url('http://www.fritolay.com/images/default-source/Logos/ruffles-logo.png');
+}
+
+.smartfood {
+    background-image: url('http://www.fritolay.com/images/default-source/Logos/smartfood-logo.png');
+}
+
+.sunchips {
+    background-image: url('http://www.fritolay.com/images/default-source/Logos/sun-chips-logo.png');
+}
+
+.roldgold {
+    background-image: url('http://www.fritolay.com/images/default-source/Logos/rold-gold-logo.png');
+}
+

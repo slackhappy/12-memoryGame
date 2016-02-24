@@ -8,7 +8,23 @@ function fillBoard() {
   //TODO: randomly assign positions to the tiles on the screen call
   // addTileToBoard here
   // Hint: You can use a forEach or a for loop
-
+  var tiles = [
+    "lays",
+    "doritos",
+    "cheetos",
+    "fritos",
+    "tostitos",
+    "ruffles",
+    "smartfood",
+    "sunchips",
+  ];
+  var doubleTiles = [];
+  for (var i = 0; i < tiles.length; i++) {
+    doubleTiles.push(tiles[i]);
+    doubleTiles.push(tiles[i]);
+  }
+  var shuffled = shuffle(doubleTiles);
+  console.log(shuffled);
 };
 
 function shuffle(array) {
